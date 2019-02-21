@@ -22,17 +22,23 @@ extension DetailViewController {
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         view.addSubview(eventNameLabel)
-        eventNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30).isActive = true
+        eventNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15).isActive = true
         eventNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         eventNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
-        eventNameLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        eventNameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         view.addSubview(postedNameLabel)
-        postedNameLabel.topAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 30).isActive = true
+        postedNameLabel.topAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: -10).isActive = true
         postedNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         postedNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
-        postedNameLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        postedNameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(interestedButton)
+        interestedButton.topAnchor.constraint(equalTo: postedNameLabel.bottomAnchor, constant: 15).isActive = true
+        interestedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        interestedButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        interestedButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
         
     }
     
