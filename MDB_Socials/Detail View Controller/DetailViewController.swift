@@ -1,0 +1,47 @@
+//
+//  ViewController.swift
+//  MDB_Socials
+//
+//  Created by Andrew Santoso on 2/13/19.
+//  Copyright © 2019 Andrew Santoso. All rights reserved.
+//
+
+import UIKit
+
+class DetailViewController: UIViewController {
+    
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "Family.jpg")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    lazy var eventNameLabel: UILabel = {
+        let eventNameLabel = UILabel()
+        eventNameLabel.backgroundColor = .white
+        eventNameLabel.textAlignment = .center
+        eventNameLabel.text = "UR MOM"
+        eventNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        return eventNameLabel
+    }()
+    
+    lazy var postedNameLabel: UILabel = {
+        let postedNameLabel = UILabel()
+        postedNameLabel.backgroundColor = .white
+        postedNameLabel.textAlignment = .center
+        postedNameLabel.text = "POSTED BY "
+        postedNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        return postedNameLabel
+    }()
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+                
+        setupViews()
+        
+    }
+}
+

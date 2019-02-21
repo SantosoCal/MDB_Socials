@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow Socials to Access the Camera?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow Socials to Access the Camera Roll?</string>
 </dict>
 </plist>
