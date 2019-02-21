@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		52A58E26BC87A4189D162F17 /* Pods_MDB_SocialsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22818036995AA7D3232CBDEE /* Pods_MDB_SocialsUITests.framework */; };
 		6BED25B3BC04FEB0B1C0992A /* Pods_MDB_Socials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8958326905A5D1CA3E1DBCF /* Pods_MDB_Socials.framework */; };
+		734F628D221E9074005614AB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F628B221E9074005614AB /* LoginViewController.swift */; };
+		734F628E221E9074005614AB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F628C221E9074005614AB /* SignUpViewController.swift */; };
+		734F6290221E90F1005614AB /* MDBLOGIN.png in Resources */ = {isa = PBXBuildFile; fileRef = 734F628F221E90F1005614AB /* MDBLOGIN.png */; };
+		734F6292221E94E1005614AB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F6291221E94E1005614AB /* FeedViewController.swift */; };
+		734F6295221E955B005614AB /* FeedViewController - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F6294221E955B005614AB /* FeedViewController - UI.swift */; };
+		734F6297221E9598005614AB /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F6296221E9598005614AB /* EventCell.swift */; };
+		734F6299221E963E005614AB /* FeedViewController - CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F6298221E963E005614AB /* FeedViewController - CV.swift */; };
+		734F629C221E97D7005614AB /* EventCell - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F629B221E97D7005614AB /* EventCell - UI.swift */; };
+		734F629E221E9E7D005614AB /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 734F629D221E9E7D005614AB /* pikachu.png */; };
+		734F62A0221EA1F4005614AB /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F629F221EA1F4005614AB /* FirebaseAPIClient.swift */; };
+		734F62A2221EA9C6005614AB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F62A1221EA9C6005614AB /* Alert.swift */; };
 		73BD3C4E22152591006862EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3C4D22152591006862EC /* AppDelegate.swift */; };
 		73BD3C5022152591006862EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3C4F22152591006862EC /* DetailViewController.swift */; };
 		73BD3C5322152591006862EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73BD3C5122152591006862EC /* Main.storyboard */; };
@@ -58,6 +69,17 @@
 		2AAFB5A7FD486E97E2BAF1FF /* Pods-MDB_SocialsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB_SocialsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDB_SocialsTests/Pods-MDB_SocialsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C539A1B093FB01C644E5603 /* Pods-MDB_SocialsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB_SocialsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDB_SocialsTests/Pods-MDB_SocialsTests.release.xcconfig"; sourceTree = "<group>"; };
 		5DA5B07A7FE0ED8A181881A7 /* Pods-MDB_Socials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB_Socials.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDB_Socials/Pods-MDB_Socials.release.xcconfig"; sourceTree = "<group>"; };
+		734F628B221E9074005614AB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		734F628C221E9074005614AB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		734F628F221E90F1005614AB /* MDBLOGIN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MDBLOGIN.png; sourceTree = "<group>"; };
+		734F6291221E94E1005614AB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		734F6294221E955B005614AB /* FeedViewController - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController - UI.swift"; sourceTree = "<group>"; };
+		734F6296221E9598005614AB /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		734F6298221E963E005614AB /* FeedViewController - CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController - CV.swift"; sourceTree = "<group>"; };
+		734F629B221E97D7005614AB /* EventCell - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventCell - UI.swift"; sourceTree = "<group>"; };
+		734F629D221E9E7D005614AB /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
+		734F629F221EA1F4005614AB /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
+		734F62A1221EA9C6005614AB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		73BD3C4A22152591006862EC /* MDB_Socials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDB_Socials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BD3C4D22152591006862EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73BD3C4F22152591006862EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +143,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		734F6293221E950D005614AB /* Feed View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				734F6291221E94E1005614AB /* FeedViewController.swift */,
+				734F6294221E955B005614AB /* FeedViewController - UI.swift */,
+				734F6298221E963E005614AB /* FeedViewController - CV.swift */,
+				734F629A221E97C9005614AB /* Event Cell */,
+			);
+			path = "Feed View Controller";
+			sourceTree = "<group>";
+		};
+		734F629A221E97C9005614AB /* Event Cell */ = {
+			isa = PBXGroup;
+			children = (
+				734F6296221E9598005614AB /* EventCell.swift */,
+				734F629B221E97D7005614AB /* EventCell - UI.swift */,
+			);
+			path = "Event Cell";
+			sourceTree = "<group>";
+		};
 		73BD3C4122152591006862EC = {
 			isa = PBXGroup;
 			children = (
@@ -153,13 +195,20 @@
 				73F61987221E30A900624118 /* ShowPhoto.swift */,
 				73F61989221E6FB300624118 /* Custom UI */,
 				73F61983221E27BF00624118 /* Constants.swift */,
+				734F628B221E9074005614AB /* LoginViewController.swift */,
+				734F629F221EA1F4005614AB /* FirebaseAPIClient.swift */,
+				734F628C221E9074005614AB /* SignUpViewController.swift */,
+				734F62A1221EA9C6005614AB /* Alert.swift */,
 				73BD3C5122152591006862EC /* Main.storyboard */,
+				734F6293221E950D005614AB /* Feed View Controller */,
 				73BD3C5722152593006862EC /* Assets.xcassets */,
 				73BD3C5922152593006862EC /* LaunchScreen.storyboard */,
 				73BD3C5C22152593006862EC /* Info.plist */,
 				73BD3C5422152591006862EC /* MDB_Socials.xcdatamodeld */,
 				73BD3C7E22152665006862EC /* GoogleService-Info.plist */,
+				734F629D221E9E7D005614AB /* pikachu.png */,
 				73F6197B221E1F1800624118 /* Family.jpg */,
+				734F628F221E90F1005614AB /* MDBLOGIN.png */,
 			);
 			path = MDB_Socials;
 			sourceTree = "<group>";
@@ -353,9 +402,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734F629E221E9E7D005614AB /* pikachu.png in Resources */,
 				73BD3C5B22152593006862EC /* LaunchScreen.storyboard in Resources */,
 				73F6197C221E1F1800624118 /* Family.jpg in Resources */,
 				73BD3C5822152593006862EC /* Assets.xcassets in Resources */,
+				734F6290221E90F1005614AB /* MDBLOGIN.png in Resources */,
 				73BD3C5322152591006862EC /* Main.storyboard in Resources */,
 				73BD3C7F22152665006862EC /* GoogleService-Info.plist in Resources */,
 			);
@@ -441,6 +492,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MDB_Socials/Pods-MDB_Socials-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -448,6 +500,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -467,15 +520,24 @@
 				73F61980221E233100624118 /* CategoryLabel.swift in Sources */,
 				73F6197E221E210E00624118 /* NewSocialViewController.swift in Sources */,
 				73BD3C5622152591006862EC /* MDB_Socials.xcdatamodeld in Sources */,
+				734F6292221E94E1005614AB /* FeedViewController.swift in Sources */,
 				73F61996221E721D00624118 /* CameraView - Image Picker.swift in Sources */,
 				73BD3C5022152591006862EC /* DetailViewController.swift in Sources */,
+				734F628E221E9074005614AB /* SignUpViewController.swift in Sources */,
 				73F61988221E30A900624118 /* ShowPhoto.swift in Sources */,
 				73F61993221E712C00624118 /* NewSocialViewController - TextView.swift in Sources */,
 				73F61984221E27BF00624118 /* Constants.swift in Sources */,
+				734F62A2221EA9C6005614AB /* Alert.swift in Sources */,
 				73BD3C4E22152591006862EC /* AppDelegate.swift in Sources */,
+				734F62A0221EA1F4005614AB /* FirebaseAPIClient.swift in Sources */,
 				73F6198C221E6FDD00624118 /* DetailViewController - UI.swift in Sources */,
+				734F6297221E9598005614AB /* EventCell.swift in Sources */,
 				73F61982221E239C00624118 /* CircleCategoryButton.swift in Sources */,
+				734F6299221E963E005614AB /* FeedViewController - CV.swift in Sources */,
+				734F6295221E955B005614AB /* FeedViewController - UI.swift in Sources */,
+				734F629C221E97D7005614AB /* EventCell - UI.swift in Sources */,
 				73F61991221E70F700624118 /* NewSocialViewController - TextField.swift in Sources */,
+				734F628D221E9074005614AB /* LoginViewController.swift in Sources */,
 				73F61986221E293300624118 /* CameraView.swift in Sources */,
 				73F61998221E723E00624118 /* CameraView - Camera.swift in Sources */,
 				73F6199A221E72B200624118 /* CameraView - UI.swift in Sources */,

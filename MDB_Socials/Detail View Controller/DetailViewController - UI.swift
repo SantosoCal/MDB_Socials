@@ -38,8 +38,12 @@ extension DetailViewController {
         interestedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         interestedButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         interestedButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
         
+        view.addSubview(rsvpLabel)
+        rsvpLabel.topAnchor.constraint(equalTo: interestedButton.bottomAnchor, constant: 15).isActive = true
+        rsvpLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rsvpLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        rsvpLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
 

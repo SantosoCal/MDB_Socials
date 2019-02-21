@@ -15,7 +15,8 @@ extension NewSocialViewController {
         let navController = navigationController!
         self.title = "New Event"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(presentCameraView))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(presentCameraView))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
         
         navController.navigationBar.tintColor = Constants.lightBlue
         

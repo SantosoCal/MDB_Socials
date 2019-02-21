@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController {
     
@@ -39,16 +40,25 @@ class DetailViewController: UIViewController {
     }()
     
     lazy var interestedButton: UIButton = {
-        let interestedButton = UIButton()
-        interestedButton.setTitle("Interested", for: .normal)
-        interestedButton.backgroundColor = Constants.correctGreen
+        let frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+        let interestedButton = CircleCategoryButton(frame: frame, categoryName: "Interested", regularBackgroundColor: .white, regularTextColor: .black, selectedBackgroundColor: Constants.correctGreen, selectedTextColor: .white)
         interestedButton.translatesAutoresizingMaskIntoConstraints = false
         return interestedButton
     }()
     
+    lazy var rsvpLabel: UILabel = {
+        let rsvpLabel = UILabel()
+        rsvpLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 13)
+        rsvpLabel.textColor = .black
+        rsvpLabel.textAlignment = .center
+        rsvpLabel.text = "421 Interested"
+        rsvpLabel.translatesAutoresizingMaskIntoConstraints = false
+        return rsvpLabel
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         setupViews()
         
     }
