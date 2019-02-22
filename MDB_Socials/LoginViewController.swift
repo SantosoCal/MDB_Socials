@@ -8,8 +8,8 @@
 //
 
 import UIKit
-
-import UIKit
+import Firebase
+import FirebaseAuth
 
 // Singleton instance to use for entire application
 let firebaseClient = FirebaseAPIClient()
@@ -34,7 +34,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         loginSetUp()
         
-        
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "toFeed", sender: self)
+        }
         
     }
     
@@ -66,7 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.autocapitalizationType = .none
         view.addSubview(passwordTextField)
         
-        signInButton = UIButton(frame: CGRect(x: 80, y: 460, width: 250, height: 50))
+        signInButton = UIButton(frame: CGRect(x: 60, y: 460, width: 250, height: 50))
         signInButton.setTitle("Sign In", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
         signInButton.backgroundColor = UIColor(red:1.00, green:0.80, blue:0.03, alpha:1.0)

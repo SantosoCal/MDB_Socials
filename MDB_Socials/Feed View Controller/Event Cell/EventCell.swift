@@ -33,7 +33,7 @@ class EventCell: UICollectionViewCell {
         let posterLabel = UILabel()
         posterLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 13)
         posterLabel.textColor = .black
-        posterLabel.text = "Andrew Santoso"
+        posterLabel.text = "Sam Lee"
 //        posterLabel.backgroundColor = .green
         posterLabel.translatesAutoresizingMaskIntoConstraints = false
         return posterLabel
@@ -55,7 +55,7 @@ class EventCell: UICollectionViewCell {
             if let event = event {
                 eventNameLabel.text = event.name
                 rsvpLabel.text = "4 Interested"
-                posterLabel.text = "Andrew Santoso"
+                posterLabel.text = "Samantha Lee"
                 firebaseClient.getEventImage(name: event.name) { (image) in
                     if image == nil {
                         print("IMAGE IS NIL")
