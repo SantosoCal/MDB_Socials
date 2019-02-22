@@ -50,7 +50,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         usernameSignUpTextField = UITextField(frame: CGRect(x: 68, y: 430, width: view.frame.width - 140, height: 35))
         usernameSignUpTextField.borderStyle = .roundedRect
-        usernameSignUpTextField.placeholder = "Enter password"
+        usernameSignUpTextField.placeholder = "Enter username"
         usernameSignUpTextField.keyboardAppearance = .dark
         usernameSignUpTextField.keyboardType = .default
         usernameSignUpTextField.textAlignment = .center
@@ -138,23 +138,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert(type: .sixCharacters)
         }
         
-        if firebaseClient.createUser(email: em, password: pass) {
-            print("created user successfully")
-            performSegue(withIdentifier: "toFeed", sender: self)
-        } else {
-            displayAlert(type: .wrongInfo)
+        firebaseClient.createUser(email: em, password: pass) { (success) in
+            if success {
+                print("created user successfully")
+                self.performSegue(withIdentifier: "toFeedFromSignIn", sender: self)
+            } else {
+                self.displayAlert(type: .wrongInfo)
+            }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

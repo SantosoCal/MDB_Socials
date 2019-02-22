@@ -11,6 +11,27 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
+    var events: [Event]? {
+        didSet{
+            if let evs = events {
+                for event in evs {
+                    print("\(event.name)")
+                }
+            }
+            collectionView.reloadData()
+        }
+    }
+    
+    var imageToPass: UIImage?
+    
+    var eventToPass: Event? {
+        didSet {
+            if let ev = eventToPass {
+                performSegue(withIdentifier: "showEvent", sender: self)
+            }
+        }
+    }
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -29,9 +50,40 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getEvents()
+        eventToPass = nil
+    }
+    
+    private func getEvents() {
+        firebaseClient.getAllEvents { (events) in
+            if let events = events {
+                self.events = events
+            }
+        }
+    }
+    
+    func updateUI() {
+        getEvents()
     }
     
     @objc func addTapped() {
         performSegue(withIdentifier: "showNew", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNew" {
+            
+        } else if segue.identifier == "showEvent" {
+            if let viewController = segue.destination as? DetailViewController {
+                viewController.image = self.imageToPass
+                viewController.event = self.eventToPass
+            }
+        }
     }
 }

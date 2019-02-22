@@ -9,6 +9,8 @@
 
 import UIKit
 
+import UIKit
+
 // Singleton instance to use for entire application
 let firebaseClient = FirebaseAPIClient()
 
@@ -21,7 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var signInButton : UIButton!
     var signUpButton : UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,32 +34,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         loginSetUp()
         
+        
+        
     }
     
     @objc func loginSetUp() {
         
-        logoImageView = UIImageView(frame: CGRect(x: 50, y: 270, width: view.frame.width - 100, height: view.frame.height / 6))
+        logoImageView = UIImageView(frame: CGRect(x: 50, y: 170, width: view.frame.width - 100, height: view.frame.height / 6))
         logoImageView.image = UIImage(named: "MDBLOGIN")
         logoImageView.contentMode =  .scaleAspectFit
         view.addSubview(logoImageView)
         
-        usernameTextField = UITextField(frame: CGRect(x: 68, y: 450, width: view.frame.width - 140, height: 35))
+        usernameTextField = UITextField(frame: CGRect(x: 68, y: 350, width: view.frame.width - 140, height: 35))
         usernameTextField.borderStyle = .roundedRect
-        usernameTextField.placeholder = "Enter username"
+        usernameTextField.placeholder = "Enter email"
         usernameTextField.keyboardAppearance = .dark
         usernameTextField.keyboardType = .default
         usernameTextField.delegate = self
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.autocapitalizationType = .none
+
         view.addSubview(usernameTextField)
         
-        passwordTextField = UITextField(frame: CGRect(x: 68, y: 500, width: view.frame.width - 140, height: 35))
+        passwordTextField = UITextField(frame: CGRect(x: 68, y: 400, width: view.frame.width - 140, height: 35))
         passwordTextField.borderStyle = .roundedRect
         passwordTextField.placeholder = "Enter password"
         passwordTextField.keyboardAppearance = .dark
         passwordTextField.keyboardType = .default
         passwordTextField.delegate = self
+        passwordTextField.autocorrectionType = .no
+        passwordTextField.autocapitalizationType = .none
         view.addSubview(passwordTextField)
         
-        signInButton = UIButton(frame: CGRect(x: 80, y: 560, width: 250, height: 50))
+        signInButton = UIButton(frame: CGRect(x: 80, y: 460, width: 250, height: 50))
         signInButton.setTitle("Sign In", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
         signInButton.backgroundColor = UIColor(red:1.00, green:0.80, blue:0.03, alpha:1.0)
@@ -70,7 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //make button add it to pokemonTraits array
         view.addSubview(signInButton)
         
-        signUpButton = UIButton(frame: CGRect(x: 70, y: 615, width: view.frame.width - 140, height: 50))
+        signUpButton = UIButton(frame: CGRect(x: 70, y: 515, width: view.frame.width - 140, height: 50))
         signUpButton.setTitle("Don't have an account? Click here!", for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.backgroundColor = UIColor(red:0.35, green:0.74, blue:0.98, alpha:1.0)
@@ -80,6 +89,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         signUpButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         //make button add it to pokemonTraits array
         view.addSubview(signUpButton)
+        
+    }
+    
+    func setupViews() {
         
     }
     
@@ -97,11 +110,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        // if the sign in works, go to feed. else, display alert
-        if firebaseClient.signInUser(email: em, password: pass) {
-            performSegue(withIdentifier: "toFeed", sender: self)
-        } else {
-            alertFailedLogin()
+        firebaseClient.signInUser(email: em, password: pass) { (success) in
+            if success {
+                self.performSegue(withIdentifier: "toFeed", sender: self)
+            } else {
+                self.alertFailedLogin()
+            }
         }
     }
     
@@ -132,6 +146,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-
+    
 }
 

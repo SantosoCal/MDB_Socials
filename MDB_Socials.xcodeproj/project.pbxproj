@@ -29,6 +29,7 @@
 		73BD3C6622152593006862EC /* MDB_SocialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3C6522152593006862EC /* MDB_SocialsTests.swift */; };
 		73BD3C7122152593006862EC /* MDB_SocialsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3C7022152593006862EC /* MDB_SocialsUITests.swift */; };
 		73BD3C7F22152665006862EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73BD3C7E22152665006862EC /* GoogleService-Info.plist */; };
+		73D3288F221F8634005D8473 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D3288E221F8634005D8473 /* Event.swift */; };
 		73F6197C221E1F1800624118 /* Family.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73F6197B221E1F1800624118 /* Family.jpg */; };
 		73F6197E221E210E00624118 /* NewSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F6197D221E210E00624118 /* NewSocialViewController.swift */; };
 		73F61980221E233100624118 /* CategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F6197F221E233100624118 /* CategoryLabel.swift */; };
@@ -95,6 +96,7 @@
 		73BD3C7022152593006862EC /* MDB_SocialsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDB_SocialsUITests.swift; sourceTree = "<group>"; };
 		73BD3C7222152593006862EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73BD3C7E22152665006862EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73D3288E221F8634005D8473 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		73F6197B221E1F1800624118 /* Family.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Family.jpg; sourceTree = "<group>"; };
 		73F6197D221E210E00624118 /* NewSocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSocialViewController.swift; sourceTree = "<group>"; };
 		73F6197F221E233100624118 /* CategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabel.swift; sourceTree = "<group>"; };
@@ -196,7 +198,7 @@
 				73F61989221E6FB300624118 /* Custom UI */,
 				73F61983221E27BF00624118 /* Constants.swift */,
 				734F628B221E9074005614AB /* LoginViewController.swift */,
-				734F629F221EA1F4005614AB /* FirebaseAPIClient.swift */,
+				73D32890221F863C005D8473 /* Firebase */,
 				734F628C221E9074005614AB /* SignUpViewController.swift */,
 				734F62A1221EA9C6005614AB /* Alert.swift */,
 				73BD3C5122152591006862EC /* Main.storyboard */,
@@ -229,6 +231,15 @@
 				73BD3C7222152593006862EC /* Info.plist */,
 			);
 			path = MDB_SocialsUITests;
+			sourceTree = "<group>";
+		};
+		73D32890221F863C005D8473 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				734F629F221EA1F4005614AB /* FirebaseAPIClient.swift */,
+				73D3288E221F8634005D8473 /* Event.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		73F61989221E6FB300624118 /* Custom UI */ = {
@@ -494,6 +505,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-MDB_Socials/Pods-MDB_Socials-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -502,6 +514,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +541,7 @@
 				73F61993221E712C00624118 /* NewSocialViewController - TextView.swift in Sources */,
 				73F61984221E27BF00624118 /* Constants.swift in Sources */,
 				734F62A2221EA9C6005614AB /* Alert.swift in Sources */,
+				73D3288F221F8634005D8473 /* Event.swift in Sources */,
 				73BD3C4E22152591006862EC /* AppDelegate.swift in Sources */,
 				734F62A0221EA1F4005614AB /* FirebaseAPIClient.swift in Sources */,
 				73F6198C221E6FDD00624118 /* DetailViewController - UI.swift in Sources */,

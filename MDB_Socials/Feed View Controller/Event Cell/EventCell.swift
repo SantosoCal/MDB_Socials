@@ -14,7 +14,7 @@ class EventCell: UICollectionViewCell {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "pikachu.png")
+//        imageView.image = UIImage(named: "pikachu.png")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -49,6 +49,24 @@ class EventCell: UICollectionViewCell {
         rsvpLabel.translatesAutoresizingMaskIntoConstraints = false
         return rsvpLabel
     }()
+    
+    var event: Event? {
+        didSet {
+            if let event = event {
+                eventNameLabel.text = event.name
+                rsvpLabel.text = "4 Interested"
+                posterLabel.text = "Andrew Santoso"
+                firebaseClient.getEventImage(name: event.name) { (image) in
+                    if image == nil {
+                        print("IMAGE IS NIL")
+                    } else {
+                        self.imageView.image = image
+                        print("SET IMAGE")
+                    }
+                }
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

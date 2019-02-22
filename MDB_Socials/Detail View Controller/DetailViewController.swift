@@ -13,8 +13,7 @@ class DetailViewController: UIViewController {
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "Family.jpg")
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -55,6 +54,35 @@ class DetailViewController: UIViewController {
         rsvpLabel.translatesAutoresizingMaskIntoConstraints = false
         return rsvpLabel
     }()
+    
+    lazy var descriptionLabel: UILabel = {
+        let descriptionLabel = UILabel()
+        descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 13)
+        descriptionLabel.textColor = .black
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        return descriptionLabel
+    }()
+    
+    var event: Event? {
+        didSet {
+            if let event = event {
+                self.eventNameLabel.text = event.name
+                self.rsvpLabel.text = "4 RSVP"
+                self.postedNameLabel.text = "Sam Lee"
+                self.descriptionLabel.text = event.description
+            }
+        }
+    }
+    
+    var image: UIImage? {
+        didSet {
+            if let im = image {
+                self.imageView.image = im
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

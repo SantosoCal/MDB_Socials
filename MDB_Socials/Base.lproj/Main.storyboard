@@ -39,6 +39,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="obO-Az-Eye"/>
                     </view>
+                    <connections>
+                        <segue destination="JxV-WW-UE8" kind="presentation" identifier="toFeedFromSignIn" id="WIR-4e-d9h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHp-dI-UFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,4 +189,7 @@
             <point key="canvasLocation" x="1018" y="815"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WIR-4e-d9h"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,8 @@ class NewSocialViewController: UIViewController {
     
     var date: String?
     
+    var name: String?
+    
     var selectedNameLabel: UILabel!
     var selectedDateLabel: UILabel!
     
@@ -26,12 +28,11 @@ class NewSocialViewController: UIViewController {
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: imageContainerView.frame.height))
-        imageView.image = UIImage(named: "Family.jpg")
+//        imageView.image = UIImage(named: "Family.jpg")
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         return imageView
     }()
-    
     
     lazy var descriptionView: UIView = {
         let descriptionView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 70))
@@ -113,24 +114,29 @@ class NewSocialViewController: UIViewController {
         return postView
     }()
     
-    lazy var postButton: CircleCategoryButton = {
-        let postButtonFrame = CGRect(x: 0, y: 0, width: 254, height: 40)
-        let postButtonColor = UIColor(red: 119/255, green: 211/255, blue: 83/255, alpha: 1)
-        let postButton = CircleCategoryButton(frame: postButtonFrame, categoryName: "Post", regularBackgroundColor: postButtonColor, regularTextColor: .white, selectedBackgroundColor: postButtonColor, selectedTextColor: .white)
+    lazy var postButton: UIButton = {
+        let frame = CGRect(x: 0, y: 0, width: 170, height: 40)
+        let postButton = UIButton(frame: frame)
+        postButton.backgroundColor = Constants.coolGreen
+        postButton.setTitle("Post", for: .normal)
+        postButton.titleLabel?.textColor = .white
+        postButton.addTarget(self, action: #selector(postButtonClicked), for: .touchUpInside)
+        postButton.layer.masksToBounds = true
+        postButton.layer.cornerRadius = postButton.frame.height / 2
         postButton.isUserInteractionEnabled = true
         postButton.translatesAutoresizingMaskIntoConstraints = false
         return postButton
     }()
     
     let placeholderText = "Add a description..."
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavBar()
         setUpViews()
     }
-
+    
     @objc func presentCameraView() {
         performSegue(withIdentifier: "showCamera", sender: self)
     }
@@ -139,6 +145,39 @@ class NewSocialViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
+    }
+    
+    @objc func postButtonClicked() {
+        
+        if imageView.image == nil {
+            displayAlertImage()
+        }
+        
+        name = nameTextField.text
+        let description = descriptionTextView.text
+        let date = dateTextField.text
+        //let users = [String: String]()
+        
+//        let event: Event = Event(name: name!, description: description!, date: date!, users: users)
+        let event: Event = Event(name: name!, description: description!, date: date!)
+        
+        firebaseClient.addNewSocial(event: event) { (success) in
+            if success {
+                if let im = self.imageView.image {
+                    firebaseClient.uploadImage(image: im, name: self.name!, completion: { (success) in
+                        if success {
+                            self.dismiss(animated: true, completion: nil)
+                        } else {
+                            print("Failed uploading image")
+                            self.displayAlert()
+                        }
+                    })
+                }
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.displayAlert()
+            }
+        }
     }
     
     @objc func cancelButtonPressed() {
@@ -155,5 +194,19 @@ class NewSocialViewController: UIViewController {
     @IBAction func unwindToNewSocialVC(segue: UIStoryboardSegue) {
         
     }
-
+    
+    func displayAlert() {
+        let alertController = UIAlertController(title: "Failed Post", message:
+            "You should try again", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Try Again", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func displayAlertImage() {
+        let alertController = UIAlertController(title: "Failed Post", message:
+            "Event needs an image", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Try Again", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }

@@ -15,6 +15,7 @@ class Constants {
     static let correctGreen: UIColor = UIColor(red: 8/255, green: 241/255, blue: 54/255, alpha: 1)
     static let wrongRed: UIColor = UIColor(red: 244/255, green: 0, blue: 0, alpha: 1)
     static let mdbYellow: UIColor = UIColor(red: 254/255, green: 232/255, blue: 43/255, alpha: 1)
+    static let coolGreen: UIColor = UIColor(red: 119/255, green: 211/255, blue: 83/255, alpha: 1)
     
     static func createThumbnail(image: UIImage) -> UIImage {
         let imageData = image.pngData()!
