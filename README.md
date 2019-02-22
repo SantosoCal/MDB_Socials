@@ -9,7 +9,7 @@ Users are also able to take photos using the camera or getting an image from the
 
 Firebase backend used.
 
-![Demo]https://user-images.githubusercontent.com/31492502/53222844-132dc500-3624-11e9-971b-99e2545f925a.png
+![Demo](https://user-images.githubusercontent.com/31492502/53222844-132dc500-3624-11e9-971b-99e2545f925a.png)
 
 
 
