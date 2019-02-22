@@ -11,5 +11,14 @@ Firebase backend used.
 
 ![Demo](https://user-images.githubusercontent.com/31492502/53222844-132dc500-3624-11e9-971b-99e2545f925a.png)
 
+The Login Page
+
+![Demo](https://user-images.githubusercontent.com/31492502/53224035-25a9fd80-3628-11e9-8a8e-45b53adcad59.png)
+
+The Main Feed
+
+![Demo](https://user-images.githubusercontent.com/31492502/53224190-c00a4100-3628-11e9-9379-0a0834293e57.png)
+
+Create New Event
 
 
